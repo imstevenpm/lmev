@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+	<model name="LegoMindstormEV3_Model">
+	
+		<!--LINKS-->
+		<!-- Pose obtained from the LDD-Blender model -->
+		<!-- Mass obtained from measuring the Lego bricks -->
+		<!-- Inertia obtained from MeshLab -->
+		<!-- Collision and Visual Geometries same as the Blender meshes-->
+		<!-- Friction coefficients obtained from standard tables -->
+		<link name="Chassis">
+			<pose>0 0 0 0 0 0</pose>
+			<inertial>
+				<mass>0.59759</mass>
+				<inertia>
+					<ixx>0.00169191</ixx>
+        	<iyy>0.000852396</iyy>
+        	<izz>0.00151643</izz>
+        	<ixy>0.00000377202</ixy>
+        	<ixz>0.0000045478</ixz>
+        	<iyz>0.0000185453</iyz>
+				</inertia>
+			</inertial>
+			<collision name="Chassis_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Chassis.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="Chassis_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Chassis.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="Right_Wheel">
+			<pose>0.06653 0.02888 -0.04029 0 0 0</pose>
+			<inertial>
+      	<mass>0.023607</mass>
+      		<inertia>
+        		<ixx>0.000009254113867</ixx>
+        		<iyy>0.0000065176188</iyy>
+        		<izz>0.0000065176188</izz>
+        		<ixy>0</ixy>
+        		<ixz>0</ixz>
+        		<iyz>0</iyz>
+      		</inertia>
+    	</inertial>
+			<collision name="Right_Wheel_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Wheel.dae
+						</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.8</mu>
+							<mu2>0.8</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+			<visual name="Right_Wheel_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Wheel.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="Left_Wheel">
+			<pose>-0.06653 0.02888 -0.04029 0 0 3.14159265359</pose>
+			<inertial>
+      	<mass>0.023607</mass>
+      		<inertia>
+        		<ixx>0.000009254113867</ixx>
+        		<iyy>0.0000065176188</iyy>
+        		<izz>0.0000065176188</izz>
+        		<ixy>0</ixy>
+        		<ixz>0</ixz>
+        		<iyz>0</iyz>
+      		</inertia>
+    	</inertial>
+			<collision name="Left_Wheel_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Wheel.dae
+						</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.8</mu>
+							<mu2>0.8</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+			<visual name="Left_Wheel_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Wheel.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="Caster">
+			<pose>-0.00021 -0.07499 -0.05629 0 0 0</pose>
+			<inertial>
+      	<mass>0.02691</mass>
+      	<inertia>
+        	<ixx>0.00000087189</ixx>
+        	<iyy>0.00000087189</iyy>
+        	<izz>0.00000087189</izz>
+        	<ixy>0</ixy>
+        	<ixz>0</ixz>
+        	<iyz>0</iyz>
+      	</inertia>
+    	</inertial>
+			<collision name="Caster_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Caster.dae
+						</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0.1</mu>
+							<mu2>0.1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+			<visual name="Caster_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Caster.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		<link name="Arm">
+			<pose>-0.00021 0.08363 0.03085 0 0 0</pose>
+			<inertial>
+      	<mass>0.0083966</mass>
+      	<inertia>
+        	<ixx>0.00000626629</ixx>
+        	<iyy>0.00000920128</iyy>
+        	<izz>0.0000134450</izz>
+        	<ixy>-0.000000000355135</ixy>
+        	<ixz>-0.000000000152949</ixz>
+        	<iyz>0.00000167312</iyz>
+      	</inertia>
+    	</inertial>
+			<collision name="Arm_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Arm.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="Arm_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Arm.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- Sensors -->
+		<!-- Most parametres are obtained from the sensor datasheet of LEGO Mindstorms EV3 Hardware Developer Kit -->
+		<!-- Plugins vinculate Gazebo sensors data with the ROS enviorment -->
+		<link name="Color">
+			<pose>-0.05627 0.08821 -0.02597 0 0 0</pose>
+			<inertial>
+      	<mass>0.013644</mass>
+      	<inertia>
+        	<ixx>0.00000271069</ixx>
+        	<iyy>0.00000186369</iyy>
+        	<izz>0.00000298191</izz>
+        	<ixy>0</ixy>
+        	<ixz>0</ixz>
+        	<iyz>0</iyz>
+      	</inertia>
+    	</inertial>
+			<collision name="Color_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Color.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="Color_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Color.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			
+			<!-- Modeling the color sensor as a camera sensor in Gazebo-->
+			<sensor name='Color_Sensor' type='camera'>
+				<always_on>true</always_on>
+				<update_rate>1000</update_rate>
+				<visualize>true</visualize>
+				<topic>Color_Sensor</topic>
+				<pose>0 0.02 0 0 0 1.57079632679</pose>
+				<camera>
+					<horizontal_fov>0.25</horizontal_fov>
+					<image>
+						<!-- Color & Light Mode -->
+						<!--<width>48</width>
+						<height>48</height>-->
+						<!-- Ambient Mode -->
+						<width>240</width>
+						<height>240</height>
+					</image>
+					<clip>
+						<!-- Color & Light Mode -->
+						<!--<near>0.0159</near>
+						<far>0.0477</far>-->
+						<!-- Ambient Mode -->
+						<near>0.0159</near>
+						<far>2.0</far>
+					</clip>
+				</camera>
+				<!-- Light Mode -->
+				<!--<plugin name="Color_Sensor_Controller" filename="libSgazebo_ros_light.so">-->
+				<!-- Color Mode -->
+				<!--<plugin name="Color_Sensor_Controller" filename="libSgazebo_ros_color.so">-->
+				<!-- Ambient Mode -->
+				<plugin name="Color_Sensor_Controller" filename="libSgazebo_ros_ambient.so">
+					<cameraName>lent</cameraName>
+					<alwaysOn>true</alwaysOn>
+					<!-- Mean: 0.0 Std: 0.5 -->
+					<gaussian_noise_mean_c>0.0</gaussian_noise_mean_c>
+					<gaussian_noise_std_c>0.5</gaussian_noise_std_c>
+					<updateRate>1000</updateRate>
+					<frameName>Color</frameName>
+					<robotNamespace>/</robotNamespace>
+				</plugin>
+     </sensor>
+		</link>
+
+		<link name="Ultrasonic">
+			<pose>-0.00026 0.06814 -0.04048 0 0 0</pose>
+			<inertial>
+      	<mass>0.02404</mass>
+      	<inertia>
+        	<ixx>0.0000059961</ixx>
+        	<iyy>0.0000076308</iyy>
+        	<izz>0.0000104856</izz>
+        	<ixy>0</ixy>
+        	<ixz>0</ixz>
+        	<iyz>0</iyz>
+      	</inertia>
+    	</inertial>
+			<collision name="Ultrasonic_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Ultrasonic.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="Ultrasonic_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Ultrasonic.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			
+			<!-- Modeling the ultrasonic sensor as a ray sensor in Gazebo-->
+			<sensor name="Ultrasonic_Sensor" type="ray">
+				<always_on>true</always_on>
+				<update_rate>66</update_rate>
+				<visualize>true</visualize>
+				<topic>Ultrasonic_Sensor</topic>
+				<pose>0 0.0235 0 0 0 1.57079632679</pose>
+				<ray>
+        	<scan>
+        		<horizontal>
+        			<samples>11</samples>
+        			<resolution>1</resolution>
+        			<min_angle>-0.14</min_angle>
+        			<max_angle>0.14</max_angle>
+        		</horizontal>
+        		<vertical>
+        			<samples>11</samples>
+        			<resolution>1</resolution>
+        			<min_angle>-0.035</min_angle>
+        			<max_angle>0.14</max_angle>
+        		</vertical>
+        	</scan>
+        	<range>
+        		<min>0</min>
+        		<max>2.55</max>
+        		<resolution>1</resolution>
+        	</range>
+				</ray>
+				<plugin name="Ultrasonic_Sensor_Controller" filename="libSgazebo_ros_range.so">
+					<alwaysOn>true</alwaysOn>
+					<updateRate>66</updateRate>
+					<radiation>ultrasound</radiation>
+					<fov>0.3491</fov>
+					<!-- Mean: 0.0 Std: 0.5-->
+					<gaussian_noise_mean_u>0.0</gaussian_noise_mean_u>
+					<gaussian_noise_std_u>0.5</gaussian_noise_std_u>
+					<frameName>Ultrasonic</frameName>
+				</plugin>
+			</sensor>
+		</link>
+
+		<link name="Touch">
+			<pose>0.05574 0.08779 -0.02612 0 0 0</pose>
+			<inertial>
+      	<mass>0.015037</mass>
+      	<inertia>
+        	<ixx>0.00000340835</ixx>
+        	<iyy>0.00000170417</iyy>
+        	<izz>0.00000314771</izz>
+        	<ixy>0</ixy>
+        	<ixz>0</ixz>
+        	<iyz>0</iyz>
+      	</inertia>
+    	</inertial>
+			<collision name="Touch_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Touch.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="Touch_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Touch.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			
+			<!-- Modeling the touch sensor as a contact sensor in Gazebo -->
+			<sensor name="Touch_Sensor" type="contact">
+				<always_on>true</always_on>
+				<update_rate>1000</update_rate>
+				<visualize>true</visualize>
+				<topic>Touch_Sensor</topic>
+				<pose>0 0 0 0 0 0</pose>
+				<contact>
+					<collision>Touch_Collision</collision>
+					<topic>Touch_Sensor</topic>
+				</contact>
+				<plugin name="Touch_Sensor_Controller" filename="libSgazebo_ros_bumper.so">
+    			<alwaysOn>true</alwaysOn>
+    			<updateRate>1000</updateRate>
+    			<bumperTopicName>Touch_Sensor</bumperTopicName>
+    			<frameName>Touch</frameName>
+  			</plugin>
+			</sensor>
+		</link>
+
+		<link name="Gyroscope">
+			<pose>-0.00029 -0.09333 0.07106 0 0 0</pose>
+			<inertial>
+      	<mass>0.012552</mass>
+      	<inertia>
+        	<ixx>0.00000249361</ixx>
+        	<iyy>0.00000142253</iyy>
+        	<izz>0.00000227605</izz>
+        	<ixy>0</ixy>
+        	<ixz>0</ixz>
+        	<iyz>0</iyz>
+      	</inertia>
+    	</inertial>
+			<collision name="Gyroscope_Collision">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Gyroscope.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</collision>
+			<visual name="Gyroscope_Visual">
+				<geometry>
+					<mesh>
+						<uri>
+							model://lmev_gazebo/models/lmev/meshes/Gyroscope.dae
+						</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			
+			<!-- Modeling gyroscope sensor as a imu sensor in Gazebo -->
+			<sensor name="Gyroscope_Sensor" type="imu">
+      	<always_on>true</always_on>
+      	<update_rate>1000</update_rate>
+      	<pose>0 0 0 0 0 0</pose>
+      	<visualize>true</visualize>
+      	<imu></imu>
+      	<plugin name="Gyroscope_Sensor_Controller" filename="libSgazebo_ros_imu_sensor.so">
+      		<alwaysOn>true</alwaysOn>
+      		<updateRateHZ>1000</updateRateHZ>
+      		<!-- Mean: 0.0 Std: 1.5 -->
+      		<gaussian_noise_mean_g>0.0</gaussian_noise_mean_g>
+      		<gaussian_noise_std_g>1.5</gaussian_noise_std_g>
+        	<xyzOffset>0 0 0</xyzOffset>
+        	<rpyOffset>0 0 0</rpyOffset>
+        	<frameName>Gyroscope</frameName>
+      	</plugin>
+    	</sensor>
+		</link>
+
+		<!-- JOINTS -->
+		<joint type="revolute" name="Right_Wheel_Joint">
+			<pose>0 0 0 0 0 0</pose>  
+			<parent>Chassis</parent>
+			<child>Right_Wheel</child>  
+			<axis>
+				<xyz>1 0 0</xyz> 
+				<dynamics>
+					<friction>0.5</friction>
+				</dynamics>
+				<!-- Continuous rotation -->
+				<limit>      
+      		<lower></lower>
+      		<upper></upper>
+    		</limit>
+  		</axis>
+		</joint>
+		<joint type="revolute" name="Left_Wheel_Joint">
+			<pose>0 0 0 0 0 3.14159265359</pose>  
+			<parent>Chassis</parent>
+			<child>Left_Wheel</child>  
+			<axis>
+				<xyz>1 0 0</xyz>
+				<dynamics>
+					<friction>0.5</friction>
+				</dynamics>
+				<!-- Continuous rotation -->   
+				<limit>      
+      		<lower></lower>
+      		<upper></upper>
+    		</limit>
+  		</axis>
+		</joint>
+		<joint type="ball" name="Caster_Joint">
+			<pose>0 0 0 0 0 0</pose>  
+			<parent>Chassis</parent>
+			<child>Caster</child>
+		</joint>
+		<joint type="revolute" name="Arm_Left_Joint">
+			<pose>-0.04 0.00938 -0.03914 0 0 0</pose>  
+			<parent>Chassis</parent>
+			<child>Arm</child>  
+			<axis>
+				<xyz>1 0 0</xyz>
+				<dynamics>
+					<friction>0.5</friction>
+				</dynamics>
+				<!-- Physical limitation -->
+				<limit>
+					<lower>-2.85</lower>
+					<upper>-0.02618</upper>
+    		</limit>
+  		</axis>
+		</joint>
+		<joint type="revolute" name="Arm_Right_Joint">
+			<pose>0.04 0.00938 -0.03914 0 0 0</pose>  
+			<parent>Chassis</parent>
+			<child>Arm</child>  
+			<axis>
+				<xyz>1 0 0</xyz>
+				<dynamics>
+					<friction>0.5</friction>
+				</dynamics>     
+				<limit>
+					<lower>-2.85</lower>
+					<upper>-0.02618</upper>
+				</limit>
+  		</axis>
+		</joint>
+		<joint type="fixed" name="Color_Joint">
+			<pose>0 0 0 0 0 0</pose>
+			<parent>Chassis</parent>
+			<child>Color</child>
+		</joint>
+				<joint type="fixed" name="Touch_Joint">
+			<pose>0 0 0 0 0 0</pose>
+			<parent>Chassis</parent>
+			<child>Touch</child>
+		</joint>
+		<joint type="fixed" name="Ultrasonic_Joint">
+			<pose>0 0 0 0 0 0</pose>
+			<parent>Chassis</parent>
+			<child>Ultrasonic</child>
+		</joint>
+		<joint type="fixed" name="Gyroscope_Joint">
+			<pose>0 0 0 0 0 0</pose>
+			<parent>Chassis</parent>
+			<child>Gyroscope</child>
+		</joint>
+
+		<!-- Model plugins -->
+		<!-- Mostly for the actuators -->
+		<!-- More details in the .cpp file -->
+		<!-- Most parametres are obtained from the motors datasheet of LEGO Mindstorms EV3 Hardware Developer Kit -->
+		
+		<!-- Move tank plugin -->
+		<plugin name="Differential_Drive_Controller" filename="libSgazebo_ros_diff_drive.so">
+    	<alwaysOn>true</alwaysOn>
+    	<updateRate>1000</updateRate>
+    	<rightJoint>Right_Wheel_Joint</rightJoint>
+    	<leftJoint>Left_Wheel_Joint</leftJoint>
+    	<wheelSeparation>0.13306</wheelSeparation>
+    	<wheelDiameter>0.056</wheelDiameter>
+    	<wheelTorque>0.45</wheelTorque>
+    	<wheelAcceleration>0</wheelAcceleration>
+    	<commandTopic>cmd_vel</commandTopic>
+    	
+    	<odometryTopic>odom</odometryTopic>
+    	<odometryFrame>odom</odometryFrame>
+    	<publishWheelTF>false</publishWheelTF>
+    	<publishWheelJointState>false</publishWheelJointState>
+    	<rosDebugLevel>na</rosDebugLevel>
+    	<publishTf>1</publishTf>
+    	<robotBaseFrame>base_footprint</robotBaseFrame>
+    	<legacyMode>false</legacyMode>
+    </plugin>
+    
+    <!-- Move motors individually plugin -->
+    <plugin name="Arm_Motor_Controller" filename="libSgazebo_ros_arm_motor.so"/>
+    
+    <plugin name="Right_Motor_Controller" filename="libSgazebo_ros_right_wheel_motor.so"/>
+    
+    <plugin name="Left_Motor_Controller" filename="libSgazebo_ros_left_wheel_motor.so"/>
+    
+    <!-- Encoders sensor -->
+    <plugin name="Encoders" filename="libSgazebo_ros_encoders.so">
+    	<!-- Mean: 0.0 Std: 0.5 -->
+    	<gaussian_noise_mean_e>0.0</gaussian_noise_mean_e>
+    	<gaussian_noise_std_e>0.5</gaussian_noise_std_e>
+    </plugin>
+    
+    <!-- Welcome text -->
+    <plugin name="Welcome" filename="libSwelcome.so"/>
+    
+	</model>
+</sdf>

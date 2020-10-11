@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+  
+  	<!-- Include in the lmev.world file the most basics models for a world, pretty much the same as empty_world.world from gazebo defaults worlds-->
+  	<!-- Use it for generally debug tasks-->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+  </world>
+</sdf>

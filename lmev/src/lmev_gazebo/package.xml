@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+	<!-- Package information -->
+  <name>lmev_gazebo</name>
+  <version>0.0.0</version>
+  <description>The lmev_gazebo package</description>
+
+  <maintainer email="imstevenpm.work@gmail.com">Steven Palma Morera</maintainer>
+
+  <license>BSD</license>
+
+	<!-- Build tools -->
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>gazebo_plugins</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>roscpp</build_depend>
+  
+  <run_depend>gazebo_plugins</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>roscpp</run_depend>
+
+	<!-- Change Gazebo ROS paths to lmev_gazebo package -->
+  <export>
+		<gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/.." />
+  </export>
+  
+</package>

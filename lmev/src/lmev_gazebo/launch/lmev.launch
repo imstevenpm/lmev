@@ -1,0 +1,24 @@
+<launch>
+
+	<!-- Launch gazebo with the specified world loaded and paused-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  	
+  	<!-- You can change the world name for your own -->
+  	<arg name="world_name" value="$(find lmev_gazebo)/worlds/lmev.world"/>
+  	<!--<arg name="world_name" value="$(find lmev_gazebo)/worlds/lmev_track.world"/>-->
+    <arg name="paused" value="true"/>
+  </include>
+
+	<node name="spawn_lmev" pkg="gazebo_ros" type="spawn_model" args="-file $(find lmev_gazebo)/models/lmev/model.sdf -sdf -x 0.0 -y -0.0 -z 0.07 -Y 0.0 -model lmev" />
+
+  <!-- Spawn the lmev model in the specified pose (location and orientation)-->
+	<!--<node name="spawn_lmev" pkg="gazebo_ros" type="spawn_model" args="-file $(find lmev_gazebo)/models/lmev/model.sdf -sdf -x 0.8 -y 0.4 -z 0.07 -Y 3.1415 -model lmev" />-->
+	
+
+	
+	<!-- You can spawn your own model here -->
+	<!--<node name="spawn_lmev_track" pkg="gazebo_ros" type="spawn_model" args="-file $(find lmev_gazebo)/models/lmev_track3/model.sdf -sdf -x 0.4 -y 0.8 -model lmev_track" />
+	
+	<node name="spawn_lmev_bulb" pkg="gazebo_ros" type="spawn_model" args="-file $(find lmev_gazebo)/models/lmev_light_bulb/model.sdf -sdf -x -0.8 -y 0.4 -z 0.05 -model lmev_light_bulb" />-->
+
+</launch>
